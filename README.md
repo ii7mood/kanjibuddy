@@ -1,6 +1,8 @@
 # Kanji Buddy
 
-![Kanji Buddy Logo](https://8upload.com/image/690f74da70ab9/logo.png)
+<p align="center">
+  <img src="https://8upload.com/image/690f74da70ab9/logo.png" width="600"><br>
+</p>
 
 **Kanji Buddy** is a small, self-contained web app for kanji review and lookup.  
 It runs entirely offline using a local SQLite database and an Express backend.  
