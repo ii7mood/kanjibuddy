@@ -1,7 +1,7 @@
 # Kanji Buddy
 
 <p align="center">
-  <img src="https://8upload.com/image/690f74da70ab9/logo.png" width="600"><br>
+  <img src="https://8upload.com/image/690f74da70ab9/logo.png" width="400"><br>
 </p>
 
 **Kanji Buddy** is a small, self-contained web app for kanji review and lookup.  
