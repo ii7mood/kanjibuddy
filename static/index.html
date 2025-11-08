@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Kanji Buddy</title>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/sections/review.css">
+    <link rel="stylesheet" href="css/sections/lookup.css">
+    <link rel="stylesheet" href="css/sections/settings.css">
+    <link rel="stylesheet" href="css/theme.css">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  </head>
+  <body>
+    <div class="sidebar">
+      <button class="button-tab active" id="review-tab" style="border-top-right-radius: 6px;" title="Review">📝</button>
+      <button class="button-tab" id="lookup-tab" title="Lookup">🔎</button>
+      <button class="button-tab" id="lookalike-tab" title="Lookalike Kanji">🧐</button>
+      <button class="button-tab" id="settings-tab" style="border-bottom-right-radius: 6px;" title="Settings">⚙️</button>
+    </div>
+
+    <div class="content">
+      <div id="message-area"></div>
+
+      <section id="review">
+        <section id="pre-review" class="sub-scene">
+          <h1 class="greeting-text">Ready to Study?</h1>
+          <p class="sub-greeting">Configure your session and begin reviewing your cards.</p>
+          <div class="review-options">
+            <label>Seed:</label>
+            <input class="seed review-input-box" type="number" placeholder=" Optional">
+            <label><input type="checkbox" id="shuffle-checkbox"> Shuffle</label>
+          </div>
+          <button class="start-button markers marker-correct">Start Reviewing!</button>
+          <button class="markers continue-button">Continue from previous session </button>
+        </section>
+
+        <section id="reviewing" class="sub-scene hidden">
+          <div class="card-view">
+            <div class="counters">
+              <p class="point-counter">Score: 9/10</p> 
+              <p class="card-counter">Card: 10/10</p>
+            </div>
+            <h1 class="kanji">食べる</h1>
+            <div class="answers hidden">
+              <p class="onyomi reading">たべる</p>
+              <p class="kunyomi reading"></p>
+              <p class="meaning">to eat</p>
+            </div>
+          </div>
+
+          <div class="input-prompt">
+            <input id="input-prompt-box" class="input-box center-text" type="text" placeholder="たべる">
+          </div>
+
+          <div class="button-prompts">
+            <button id="marker-correct" class="marker-correct markers">Mark as correct!</button>  
+            <button id="marker-incorrect" class="marker-incorrect markers">Mark as incorrect.</button>
+          </div>
+          <button id="show-answer" class="markers">Show Answer</button>
+        </section>
+
+        <section id="post-review" class="hidden sub-scene">
+          <h1 class="greeting-text">Session Complete!</h1>
+          <p class="sub-greeting">You've finished reviewing your cards.</p>
+          <p id="final-score" class="sub-greeting">Final Score:</p>
+          <button id="restart-button" class="start-button markers marker-correct">Restart</button>
+        </section>
+      </section>
+
+      <section id="lookup" class="hidden">
+        <div class="lookup">
+          <h1 class="header">Database</h1>
+          <hr>
+          <div class="add-card">
+            <button class="add-card markers marker-correct">Add Card</button>
+            <input class="input-box card-input-box" placeholder="食べる">
+            <input class="input-box card-input-box" placeholder="to eat">
+            <input class="input-box card-input-box" placeholder="ショク、 ジキ">
+            <input class="input-box card-input-box" placeholder="たべる">
+          </div>
+          <div class="table-container">
+            <table id="card-table">
+              <thead>
+                <tr>
+                  <th class="center-text">
+                    <button class="delete-card markers marker-incorrect">Delete Selected</button>
+                  </th>
+                  <th class="center-text">ID</th>
+                  <th class="center-text">Kanji</th>
+                  <th class="center-text">Meaning</th>
+                  <th class="center-text">On’yomi</th>
+                  <th class="center-text">Kun’yomi</th>
+                  <th class="center-text">Modify</th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <section id="lookalike" class="hidden">
+        <h1 class="greeting-text">Working on it!</h1>
+      </section>
+
+      <section id="settings" class="hidden">
+        <h1 class="header">Settings</h1>
+        <hr>
+
+        <div class="settings-group">
+          <div class="option">
+            <label>No. cards per session</label>
+            <input id="no-cards-input" type="number" placeholder="10" value="10">
+          </div>
+          <div class="option">
+            <label class="option-label">
+              <span>Default shuffle</span>
+              <input type="checkbox" id="shuffle-setting">
+            </label>
+          </div>
+          <div class="option">
+            <label>Dark theme (always on, cope)</label>
+            <input type="checkbox" checked disabled>
+          </div>
+          <div class="option">
+            <label>Port: </label>
+            <input id="port-input" type="number" placeholder="3000" value="3000">
+          </div>
+        </div>
+
+        <button class="save-button">Save</button>
+      </section>
+    </div>
+    <script type="module" src="scripts/app.js" defer></script>
+  </body>
+</html>

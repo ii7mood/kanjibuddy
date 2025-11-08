@@ -1,0 +1,65 @@
+html, body {
+  margin: 0;
+  height: 100%;
+  width: 100%;
+  font-family: "Segoe UI", sans-serif;
+  color: #e0e0e0;
+  background-color: #121212;
+  letter-spacing: 0.03em;
+  line-height: 1.5;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #ffffffcc;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  margin-top: 0;
+}
+
+p, label, input, button {
+  color: #aaaaaa;
+  font-size: 1rem;
+}
+
+button, input {
+  font-family: inherit;
+  letter-spacing: 0.04em;
+}
+
+
+body {
+  display: flex;
+  align-items: center;
+  background-color: rgb(40, 38, 38);
+}
+
+.center-text {
+  text-align: center;
+}
+
+.hidden {
+  display: none !important;
+}
+
+input[type="number"] {
+  text-align: center;
+  -moz-appearance: textfield; /* Firefox */
+  appearance: none;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Hide scrollbar but keep scrollable behavior */
+::-webkit-scrollbar {
+  width: 0px;
+  height: 0px;
+}
+
+* {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE/Edge legacy */
+}

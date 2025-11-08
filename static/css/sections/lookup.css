@@ -1,0 +1,112 @@
+section#lookup {
+  text-align: center;
+}
+
+.table-container {
+  max-height: calc(100vh - 250px);
+  overflow-y: auto;
+  overflow-x: hidden;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 0 20px;
+  margin-top: 1%;
+}
+
+#card-table {
+  color: #eee;
+  font-size: 1.25rem;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0;
+}
+
+th, td {
+  border: 1px solid #555;
+  padding: 0.5rem;
+}
+
+th {
+  background-color: #2b2b2b;
+  font-weight: bold;
+
+  position: sticky;
+  top: 0;
+  background-color: #1f1f1f;
+  z-index: 2;
+}
+
+tr:nth-child(even) {
+  background-color: #1f1f1f;
+}
+
+tr:hover {
+  background-color: #0d0d0d;
+}
+
+/* Checkbox and modify button styles */
+input.select-checkbox {
+  appearance: none;
+  -webkit-appearance: none;
+  margin: 0;
+  width: 1.5rem;
+  height: 1.5rem;
+  border: 2px solid #777;
+  border-radius: 4px;
+  background-color: #1f1f1f;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+input.select-checkbox:hover {
+  border-color: #aaa;
+  background-color: #2a2a2a;
+}
+
+input.select-checkbox:checked {
+  background-color: #4caf50;
+  border-color: #4caf50;
+}
+
+input.select-checkbox:checked::after {
+  content: '✔';
+  color: white;
+  font-size: 1.05rem;
+  position: absolute;
+  top: 0;
+  left: 2px;
+}
+
+.modify-record-button {
+  background-color: rgba(255, 221, 87, 0.2);
+  border: 1px solid rgba(255, 221, 87, 0.5);
+}
+
+.modify-record-button:hover {
+  background-color: rgba(255, 221, 87, 0.35);
+  box-shadow: 0 0 4px rgba(255, 221, 87, 0.4);
+}
+
+.delete-card {
+  margin: 0;
+  font-size: 0.9rem;
+  border-color: #f44336;
+  color: #f5f5f5;
+  transition: all 0.2s ease;
+}
+
+.delete-card:hover {
+  background-color: #4c2521;
+  box-shadow: 0 0 4px #f44336;
+}
+
+.card-input-box {
+    width: 20%;
+    height: 2rem;
+    padding-bottom: 0.35rem;
+    padding-top: 0.25rem;
+    font-size: 1.1rem;
+    margin-left: 0.75rem;
+    text-align: center;
+}

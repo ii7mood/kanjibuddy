@@ -1,0 +1,68 @@
+section#settings {
+    text-align: center;
+}
+
+.settings-group {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.option {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #2b2b2b;
+  padding: 0.6rem 0.9rem;
+  border-radius: 6px;
+  transition: background-color 0.15s ease-in-out;
+}
+
+.option:hover {
+  background-color: #343434;
+}
+
+.option-label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  cursor: pointer;
+  user-select: none;
+}
+
+.option-label input[type="checkbox"] {
+  transform: scale(1.2);
+  accent-color: #66df6c;
+}
+
+.option input[type="number"],
+.option input[type="text"] {
+  width: 100px;
+  padding: 0.3rem 0.5rem;
+  border: 1px solid #444;
+  border-radius: 4px;
+  background-color: #1a1a1a;
+  color: #e0e0e0;
+  text-align: right;
+  font-size: 0.9rem;
+}
+
+.save-button {
+  display: block;
+  margin: 1.5rem auto 0;
+  padding: 0.5rem 1.25rem;
+  background-color: #2e7d32;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.save-button:hover {
+  background-color: #388e3c;
+}

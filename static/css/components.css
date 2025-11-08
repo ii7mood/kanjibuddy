@@ -1,0 +1,67 @@
+.markers {
+  padding: 12px 24px;
+  border: 1px solid #666;
+  border-radius: 8px;
+  background-color: #2b2b2b;
+  color: #f5f5f5;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.markers:hover {
+  background-color: #3a3a3a;
+  border-color: #888;
+  box-shadow: 0 0 6px #666;
+}
+
+.markers:active {
+  transform: scale(0.97);
+  background-color: #222;
+}
+
+.markers:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  filter: grayscale(40%);
+}
+
+.marker-correct {
+  background-color: rgba(74, 112, 80, 0.25);
+  border-color: #4caf50;
+}
+
+.marker-correct:hover {
+  background-color: #3a6040;
+  box-shadow: 0 0 6px #4caf50;
+}
+
+.marker-incorrect {
+  background-color: rgba(155, 102, 89, 0.25);
+  border-color: #f44336;
+}
+
+.marker-incorrect:hover {
+  background-color: #5c2e2a;
+  box-shadow: 0 0 6px #f44336;
+}
+
+.input-box {
+  border: 1px solid #555;
+  border-radius: 8px;
+  background-color: #1f1f1f;
+  color: #f5f5f5;
+  font-size: 1.5rem;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.input-box:focus {
+  border-color: #888;
+  box-shadow: 0 0 6px #888;
+}
+
+.header {
+  margin: 1rem 0 2rem 2rem;
+  font-size: 3.25rem;
+}
