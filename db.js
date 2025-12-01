@@ -43,17 +43,6 @@ class DBInterface {
         .execute();
     }
 
-    async get_card(id) {  // returns a single card through id
-        if (id != null) {
-            const card = await this.db
-            .selectFrom('flashcards')
-            .selectAll()
-            .where('id', '=', id)
-            .executeTakeFirst()
-        };
-        return card ? [card]: []
-    };
-
     async list_cards(n) {
     const query = this.db
         .selectFrom('flashcards')
