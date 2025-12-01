@@ -28,27 +28,23 @@ app.use(express.json())
 app.use(express.static("./static"))
 
 app.get('/api/cards', async (req, res) => {
-    const limit = req.query.limit ? Number(req.query.limit) : null;
-    if (limit != null) {
-        return res.send(await database.list_cards(limit)) // returns an array of objects
-    };
-    return res.send(await database.list_cards());
-});
-
-app.get('/api/cards/:id', async (req, res) => {
-    res.send(await database.get_card(req.params.id)); // an array containing a single object
+  const limit = req.query.limit ? Number(req.query.limit) : null;
+  if (limit != null) {
+    return res.send(await database.list_cards(limit)) // returns an array of objects
+  };
+  return res.send(await database.list_cards());
 });
 
 app.post('/api/cards', async (req, res) => {
-    const { kanji, meaning, kunyomi, onyomi } = req.body;
-    await database.add_card(kanji, meaning, kunyomi, onyomi);
-    res.send('Added new card!')
+  const { kanji, meaning, kunyomi, onyomi } = req.body;
+  await database.add_card(kanji, meaning, kunyomi, onyomi);
+  res.send('Added new card!')
 });
 
 app.delete('/api/cards', async (req, res) => {
-    const { ids } = req.body;
-    await database.bulk_delete_cards(ids);
-    res.sendStatus(204);
+  const { ids } = req.body;
+  await database.bulk_delete_cards(ids);
+  res.sendStatus(204);
 });
 
 app.put('/api/cards/:id', async (req, res) => {
@@ -69,12 +65,12 @@ app.post('/api/config', async (req, res) => {
 });
 
 app.get('/api/config', async (req, res) => {
-    const config = await loadServerConfig();
-    res.json(config);
+  const config = await loadServerConfig();
+  res.json(config);
 });
 
 app.get('/', (req, res) => {
-    res.sendFile('index.html');
+  res.sendFile('index.html');
 })
 
 app.listen(PORT, () => console.log('Server running at http://localhost:'+PORT))
