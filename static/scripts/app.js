@@ -5,7 +5,7 @@ import { lookup_post_process } from "./lookup.js";
 import { saveSession, loadReviews, clearReviews, loadConfig } from "./session.js";
 import { loadKeymap } from "./keyboard.js";
 
-function display_message(message, type = "info") {
+function display_message(message, type = "info") { // types can be info, success, or error
     console.log(`${message} \nType: ${type}`)
   const area = document.getElementById("message-area");
   const div = document.createElement("div");
@@ -63,7 +63,8 @@ async function render_lookup() {
 
     const records = await fetch('/api/cards');
     if (!records.ok) {
-        display_message("Network response was not ok", "error")
+        display_message("Network response was not ok; refer to logs.", "error")
+        console.log(records.body)
         throw new Error('Network response was not ok');
     }
     const cards = await records.json();
@@ -84,7 +85,7 @@ async function render_lookup() {
 }
 
 async function render_lookalike() {
-    console.log("Working on it!");
+    display_message("Working on it!", "info")
 }
 
 async function render_settings() {

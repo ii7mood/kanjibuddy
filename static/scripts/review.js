@@ -7,7 +7,8 @@ async function list_cards(n) {
     };
 
     if (!response.ok) {
-        console.log("Something went wrong retrieving cards.");
+        window.display_message("Failed to get database records; refer to console logs.")
+        console.log(response.body);
         return [];
     }
     return await response.json();

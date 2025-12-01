@@ -4,10 +4,19 @@ export async function add_card() {
     const [ kanji, meaning, onyomi, kunyomi ] = card.map(i => i.value);
     // ^ Deconstructed every value in the array `card` and assigned it (respectively) to the aforementioned variables
     
-    if (kanji == null || meaning == null || (onyomi == null && kunyomi == null)) {
-        console.log("Invalid Card");
-        return; // later we will implement proper error messages
-    };
+    if (!kanji.trim()) {
+        console.log("'Kanji' Field is empty!");
+        window.display_message("'Kanji' field is empty!", "error");
+        return;
+    } else if (!meaning.trim()) {
+        console.log("'Meaning' field is empty!")
+        window.display_message("'Meaning' field is empty!", "error")
+        return;
+    } else if (!onyomi.trim() && !kunyomi.trim()) {
+        console.log("Both 'Onyomi' & 'Kunyomi' fields are empty!")
+        window.display_message("'Onyomi' & 'Kunyomi' fields are empty!", "error")
+        return;
+    }
 
     const response = await fetch('/api/cards', {
         method: 'POST',
@@ -16,8 +25,9 @@ export async function add_card() {
     });
 
     if (!response.ok) {
-        console.log("Failed to add card.");
-        return; // refer to previous comment
+        console.log(response.body);
+        window.display_message("Failed to add card; refer to console logs.");
+        return;
     };
     return 0; // ok
 };
@@ -39,8 +49,9 @@ export async function delete_card() {
     });
 
     if (!response.ok) {
-        console.log('Failed to delete card.');
-        return; // will add proper error messages later.
+        console.log(response.body);
+        window.display_message("Failed to delete card; refer to console logs.")
+        return;
     };
     return; // ok
 };
@@ -58,7 +69,8 @@ export async function toggle_save_mode(button) {
             body: JSON.stringify({ kanji, meaning, onyomi, kunyomi})
         });
         if (response.status != 204) {
-            console.log("Something went wrong updating a card")
+            console.log(response.body);
+            window.display_message("Failed to update card; refer to console logs.")
             return;
         };
 

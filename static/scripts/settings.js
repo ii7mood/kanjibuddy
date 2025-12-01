@@ -15,8 +15,11 @@ save_button.addEventListener("click", () => {
 
     const no_cards = no_cards_input.value.trim() ? parseInt(no_cards_input.value.trim(), 10) : null;
     const port = port_input.value.trim() ? parseInt(port_input.value.trim(), 10) : null;
-    if (!no_cards || !port) {
-        console.log("Invalid card count or port");
+    if (!no_cards) {
+        window.display_message("Invalid number of cards!", 'error');
+        return;
+    } else if (!port) {
+        window.display_message("Invalid port!", 'error');
         return;
     };
 
