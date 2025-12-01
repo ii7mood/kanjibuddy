@@ -23,8 +23,7 @@ You can add, edit, or review cards directly from the browser — no accounts, no
 
 ## ⚙️ Requirements
 
-- **Tested on Node.js v24**  
-  > Note: **Node v25 is not supported** — `better-sqlite3` currently breaks on it.
+- **Tested on Node.js v25.2.0**  
 - **npm** or **pnpm**
 - Any modern browser
 
