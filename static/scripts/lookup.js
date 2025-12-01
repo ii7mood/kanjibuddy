@@ -25,7 +25,7 @@ export async function add_card() {
     });
 
     if (!response.ok) {
-        console.log(response.body);
+        console.log(await response.json());
         window.display_message("Failed to add card; refer to console logs.");
         return;
     };
@@ -49,7 +49,7 @@ export async function delete_card() {
     });
 
     if (!response.ok) {
-        console.log(response.body);
+        console.log(await response.json());
         window.display_message("Failed to delete card; refer to console logs.")
         return;
     };
@@ -69,7 +69,7 @@ export async function toggle_save_mode(button) {
             body: JSON.stringify({ kanji, meaning, onyomi, kunyomi})
         });
         if (response.status != 204) {
-            console.log(response.body);
+            console.log(await response.json());
             window.display_message("Failed to update card; refer to console logs.")
             return;
         };

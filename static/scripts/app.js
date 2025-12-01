@@ -64,7 +64,7 @@ async function render_lookup() {
     const records = await fetch('/api/cards');
     if (!records.ok) {
         display_message("Network response was not ok; refer to logs.", "error")
-        console.log(records.body)
+        console.log(await response.json());
         throw new Error('Network response was not ok');
     }
     const cards = await records.json();

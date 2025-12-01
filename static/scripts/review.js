@@ -48,7 +48,7 @@ async function start() {
 
 async function form_deck() {
     const seedElement = document.querySelector('.seed');
-    const seed = seedElement.textContent.trim() ? parseInt(seedElement.textContent.trim(), 10) : 0;
+    const seed = seedElement.value.trim() ? parseInt(seedElement.textContent.trim(), 10) : 0;
 
     let deck = await list_cards(window.config.no_cards);
 
