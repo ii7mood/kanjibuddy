@@ -5,15 +5,12 @@ export async function add_card() {
     // ^ Deconstructed every value in the array `card` and assigned it (respectively) to the aforementioned variables
     
     if (!kanji.trim()) {
-        console.log("'Kanji' Field is empty!");
         window.display_message("'Kanji' field is empty!", "negative");
         return;
     } else if (!meaning.trim()) {
-        console.log("'Meaning' field is empty!")
         window.display_message("'Meaning' field is empty!", "negative")
         return;
     } else if (!onyomi.trim() && !kunyomi.trim()) {
-        console.log("Both 'Onyomi' & 'Kunyomi' fields are empty!")
         window.display_message("'Onyomi' & 'Kunyomi' fields are empty!", "negative")
         return;
     }
@@ -49,7 +46,6 @@ export async function delete_card() {
     });
 
     if (!response.ok) {
-        console.log(await response.json());
         window.display_message("Failed to delete card; refer to console logs.", "negative")
         return;
     };

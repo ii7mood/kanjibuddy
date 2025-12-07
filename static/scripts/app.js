@@ -7,17 +7,17 @@ import { loadKeymap } from "./keyboard.js";
 
 function display_message(message, type = "neutral") {
     console.log(`${message} \nType: ${type}`)
-  const area = document.getElementById("message-area");
-  const div = document.createElement("div");
-  div.className = `message ${type}`;
-  div.textContent = message;
-  area.appendChild(div);
+    const area = document.getElementById("message-area");
+    const div = document.createElement("div");
+    div.className = `message ${type}`;
+    div.textContent = message;
+    area.appendChild(div);
 
-  setTimeout(() => {
-    div.style.opacity = "0";
-    div.style.transform = "translateY(-10px)";
-    setTimeout(() => div.remove(), 300);
-  }, 4000);
+    setTimeout(() => {
+        div.style.opacity = "0";
+        div.style.transform = "translateY(-10px)";
+        setTimeout(() => div.remove(), 300);
+    }, 4000);
 };
 
 async function render_review(stage) {
