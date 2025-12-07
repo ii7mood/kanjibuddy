@@ -42,6 +42,11 @@ async function render_review(stage) {
 
         case "reviewing":
             const card = state.review.cards[state.review.index]
+            if (card == null) {
+                window.display_message("Card is null. (Did you add any cards to your deck?)", "negative")
+                return;
+            };
+
             document.querySelector('.kanji').textContent = card.kanji;
             document.querySelector('.meaning').textContent = card.meaning;
             document.querySelector('.onyomi').textContent = card.onyomi;
