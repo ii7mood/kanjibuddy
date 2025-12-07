@@ -5,7 +5,7 @@ import { lookup_post_process } from "./lookup.js";
 import { saveSession, loadReviews, clearReviews, loadConfig } from "./session.js";
 import { loadKeymap } from "./keyboard.js";
 
-function display_message(message, type = "info") { // types can be info, success, or error
+function display_message(message, type = "neutral") {
     console.log(`${message} \nType: ${type}`)
   const area = document.getElementById("message-area");
   const div = document.createElement("div");
@@ -63,7 +63,7 @@ async function render_lookup() {
 
     const records = await fetch('/api/cards');
     if (!records.ok) {
-        display_message("Network response was not ok; refer to logs.", "error")
+        display_message("Network response was not ok; refer to logs.", "negative")
         console.log(await response.json());
         throw new Error('Network response was not ok');
     }
@@ -78,14 +78,14 @@ async function render_lookup() {
         <td class="center-text">${card.meaning}</td>
         <td class="center-text">${card.onyomi}</td>
         <td class="center-text">${card.kunyomi}</td>
-        <td class="center-text"><button class="markers marker-correct modify-record-button">✏️</button></td>
+        <td class="center-text"><button class="modify-record-button generic-btn positive">✏️</button></td>
         `
         table_body.appendChild(row);
     });
 }
 
 async function render_lookalike() {
-    display_message("Working on it!", "info")
+    display_message("Working on it!", "neutral")
 }
 
 async function render_settings() {

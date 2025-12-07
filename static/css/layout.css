@@ -67,16 +67,6 @@
   opacity: 0.95;
 }
 
-.message.success { 
-  background-color: rgba(40, 167, 69, 0.35);   /* translucent green */ 
-}
-.message.error { 
-  background-color: rgba(220, 53, 69, 0.5);   /* translucent red */ 
-}
-.message.info { 
-  background-color: rgba(0, 123, 255, 0.5);   /* translucent blue */ 
-}
-
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(-10px); }
   to   { opacity: 0.95; transform: translateY(0); }

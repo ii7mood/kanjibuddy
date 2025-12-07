@@ -32,8 +32,8 @@
             <input class="seed review-input-box" type="number" placeholder=" Optional">
             <label><input type="checkbox" id="shuffle-checkbox"> Shuffle</label>
           </div>
-          <button class="start-button markers marker-correct">Start Reviewing!</button>
-          <button class="markers continue-button">Continue from previous session </button>
+          <button class="generic-btn positive start-button">Start Reviewing!</button>
+          <button class="generic-btn continue-button">Continue from previous session </button>
         </section>
 
         <section id="reviewing" class="sub-scene hidden">
@@ -55,17 +55,17 @@
           </div>
 
           <div class="button-prompts">
-            <button id="marker-correct" class="marker-correct markers">Mark as correct!</button>  
-            <button id="marker-incorrect" class="marker-incorrect markers">Mark as incorrect.</button>
+            <button id="marker-correct" class="generic-btn positive">Mark as correct!</button>  
+            <button id="marker-incorrect" class="generic-btn negative">Mark as incorrect.</button>
           </div>
-          <button id="show-answer" class="markers">Show Answer</button>
+          <button id="show-answer" class="generic-btn">Show Answer</button>
         </section>
 
         <section id="post-review" class="hidden sub-scene">
           <h1 class="greeting-text">Session Complete!</h1>
           <p class="sub-greeting">You've finished reviewing your cards.</p>
           <p id="final-score" class="sub-greeting">Final Score:</p>
-          <button id="restart-button" class="start-button markers marker-correct">Restart</button>
+          <button id="restart-button" class="generic-btn positive">Restart</button>
         </section>
       </section>
 
@@ -74,7 +74,7 @@
           <h1 class="header">Database</h1>
           <hr>
           <div class="add-card">
-            <button class="add-card markers marker-correct">Add Card</button>
+            <button class="generic-btn positive add-card">Add Card</button>
             <input class="input-box card-input-box" placeholder="食べる">
             <input class="input-box card-input-box" placeholder="to eat">
             <input class="input-box card-input-box" placeholder="ショク、 ジキ">
@@ -85,7 +85,7 @@
               <thead>
                 <tr>
                   <th class="center-text">
-                    <button class="delete-card markers marker-incorrect">Delete Selected</button>
+                    <button class="generic-btn negative delete-card">Delete Selected</button>
                   </th>
                   <th class="center-text">ID</th>
                   <th class="center-text">Kanji</th>

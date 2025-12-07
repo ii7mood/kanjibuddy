@@ -1,4 +1,4 @@
-.markers {
+.generic-btn {
   padding: 12px 24px;
   border: 1px solid #666;
   border-radius: 8px;
@@ -9,41 +9,51 @@
   transition: all 0.2s ease;
 }
 
-.markers:hover {
+.generic-btn:hover {
   background-color: #3a3a3a;
   border-color: #888;
   box-shadow: 0 0 6px #666;
 }
 
-.markers:active {
+.generic-btn:active {
   transform: scale(0.97);
   background-color: #222;
 }
 
-.markers:disabled {
+.generic-btn:disabled {
   opacity: 0.5;
   cursor: not-allowed;
   filter: grayscale(40%);
 }
 
-.marker-correct {
-  background-color: rgba(74, 112, 80, 0.25);
+.positive {
+  background-color: rgba(61, 106, 68, 0.5);
   border-color: #4caf50;
 }
 
-.marker-correct:hover {
+.positive:hover {
   background-color: #3a6040;
   box-shadow: 0 0 6px #4caf50;
 }
 
-.marker-incorrect {
-  background-color: rgba(155, 102, 89, 0.25);
+.negative {
+  background-color: rgba(155, 102, 89, 0.5);
   border-color: #f44336;
 }
 
-.marker-incorrect:hover {
+.negative:hover {
   background-color: #5c2e2a;
   box-shadow: 0 0 6px #f44336;
+}
+
+.neutral {
+  background-color: #004691; 
+  border-color: 0 0 6px #4da2fd;
+}
+
+.neutral:hover {
+  background-color: #225a97;
+  box-shadow: 0 0 6px #4da2fd;
 }
 
 .input-box {

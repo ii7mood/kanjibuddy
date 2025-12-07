@@ -7,7 +7,7 @@ async function list_cards(n) {
     };
 
     if (!response.ok) {
-        window.display_message("Failed to get database records; refer to console logs.")
+        window.display_message("Failed to get database records; refer to console logs.", "negative")
         console.log(response.body);
         return [];
     }
@@ -134,6 +134,6 @@ export function getKeymap(stage) {
                 }
             ]
     };
-    window.display_message('Invalid stage keymap selection', "error");
+    window.display_message('Invalid stage keymap selection', "negative");
     return [{key: '', callback: console.log}] // temp solution; guard loadKeymap() later
 }

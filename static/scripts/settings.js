@@ -16,10 +16,10 @@ save_button.addEventListener("click", () => {
     const no_cards = no_cards_input.value.trim() ? parseInt(no_cards_input.value.trim(), 10) : null;
     const port = port_input.value.trim() ? parseInt(port_input.value.trim(), 10) : null;
     if (!no_cards) {
-        window.display_message("Invalid number of cards!", 'error');
+        window.display_message("Invalid number of cards!", 'negative');
         return;
     } else if (!port) {
-        window.display_message("Invalid port!", 'error');
+        window.display_message("Invalid port!", 'negative');
         return;
     };
 
@@ -27,5 +27,5 @@ save_button.addEventListener("click", () => {
     window.config.port = port;
     saveServerConfig();
     window.saveSession();
-    window.display_message("Some changes require a restart to take effect!", "success")
+    window.display_message("Some changes require a restart to take effect!", "positive")
 });

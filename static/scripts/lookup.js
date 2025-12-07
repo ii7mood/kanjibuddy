@@ -6,15 +6,15 @@ export async function add_card() {
     
     if (!kanji.trim()) {
         console.log("'Kanji' Field is empty!");
-        window.display_message("'Kanji' field is empty!", "error");
+        window.display_message("'Kanji' field is empty!", "negative");
         return;
     } else if (!meaning.trim()) {
         console.log("'Meaning' field is empty!")
-        window.display_message("'Meaning' field is empty!", "error")
+        window.display_message("'Meaning' field is empty!", "negative")
         return;
     } else if (!onyomi.trim() && !kunyomi.trim()) {
         console.log("Both 'Onyomi' & 'Kunyomi' fields are empty!")
-        window.display_message("'Onyomi' & 'Kunyomi' fields are empty!", "error")
+        window.display_message("'Onyomi' & 'Kunyomi' fields are empty!", "negative")
         return;
     }
 
@@ -26,7 +26,7 @@ export async function add_card() {
 
     if (!response.ok) {
         console.log(await response.json());
-        window.display_message("Failed to add card; refer to console logs.");
+        window.display_message("Failed to add card; refer to console logs.", "negative");
         return;
     };
     return 0; // ok
@@ -50,7 +50,7 @@ export async function delete_card() {
 
     if (!response.ok) {
         console.log(await response.json());
-        window.display_message("Failed to delete card; refer to console logs.")
+        window.display_message("Failed to delete card; refer to console logs.", "negative")
         return;
     };
     return; // ok
@@ -70,7 +70,7 @@ export async function toggle_save_mode(button) {
         });
         if (response.status != 204) {
             console.log(await response.json());
-            window.display_message("Failed to update card; refer to console logs.")
+            window.display_message("Failed to update card; refer to console logs.", "negative")
             return;
         };
 
@@ -114,7 +114,7 @@ document.addEventListener('click', async (e) => {
     const code = await toggle_save_mode(button); 
     // returns 0 if something was updated in DB, returns 1 if entered save-mode, otherwise errors 
     if (code === 0) {
-        window.display_message("Updated!", "success")
+        window.display_message("Updated!", "positive")
         await window.render_app('lookup'); // have to re-render to show updated change in the database.
     }
 });
