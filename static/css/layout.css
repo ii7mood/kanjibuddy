@@ -72,3 +72,7 @@
   to   { opacity: 0.95; transform: translateY(0); }
 }
 
+.header {
+  margin: 1rem 0 2rem 2rem;
+  font-size: 3.25rem;
+}

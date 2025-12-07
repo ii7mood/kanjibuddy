@@ -56,7 +56,7 @@
   box-shadow: 0 0 6px #4da2fd;
 }
 
-.input-box {
+.generic-input-box {
   border: 1px solid #555;
   border-radius: 8px;
   background-color: #1f1f1f;
@@ -66,12 +66,9 @@
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
-.input-box:focus {
+.generic-input-box:focus {
   border-color: #888;
   box-shadow: 0 0 6px #888;
 }
 
-.header {
-  margin: 1rem 0 2rem 2rem;
-  font-size: 3.25rem;
-}
+
