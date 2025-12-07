@@ -126,7 +126,7 @@ async function render_app(scene_id, stage = null) {
     }
 }
 
-const tabs = document.querySelectorAll('.button-tab');
+const tabs = document.querySelectorAll('.sidebar-tab');
 tabs.forEach(tab => {
     tab.addEventListener('click', async () => {
         const prev_scene = document.querySelector('.content > section:not(.hidden)'); 

@@ -1,4 +1,4 @@
-/* Sidebar */
+/* sidebar */
 .sidebar {
   display: flex;
   flex-direction: column;
@@ -12,8 +12,7 @@
   box-sizing: border-box;
 }
 
-/* Sidebar buttons */
-.button-tab {
+.sidebar-tab {
   flex: 1;
   width: 100%;
   background-color: transparent;
@@ -26,14 +25,14 @@
   margin: 0;
 }
 
-.button-tab:hover {
+.sidebar-tab:hover {
   background-color: #3a3a3a;
   border-color: #888;
   color: white;
   transform: translateX(2px);
 }
 
-.button-tab.active {
+.sidebar-tab.active {
   border-color: #adadad;
   color: #b8ffb8;
 }
@@ -70,9 +69,4 @@
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(-10px); }
   to   { opacity: 0.95; transform: translateY(0); }
-}
-
-.header {
-  margin: 1rem 0 2rem 2rem;
-  font-size: 3.25rem;
 }
