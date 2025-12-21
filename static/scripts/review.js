@@ -143,6 +143,6 @@ export function getKeymap(stage) {
         },
       ];
   }
-  window.display_message("Invalid stage keymap selection", "negative");
+  window.display_message("Invalid stage keymap selection: "+ stage, "negative");
   return [];
 }

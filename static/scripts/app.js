@@ -28,6 +28,7 @@ async function render_review(stage) {
   ) {
     document.querySelector(`section#${state.review.stage}`).classList.add("hidden");
     document.querySelector(`section#${stage}`).classList.remove("hidden");
+    state.review.stage = stage;
   }
 
   switch (state.review.stage) {
