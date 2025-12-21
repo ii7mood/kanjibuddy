@@ -1,7 +1,7 @@
 import { getKeymap as getStageKeymap } from "./review.js";
 import "./settings.js";
 import "./keyboard.js";
-import { lookup_post_process } from "./lookup.js";
+import { library_post_process } from "./library.js";
 import { saveSession, loadReviews, clearReviews, loadConfig } from "./session.js";
 import { loadKeymap } from "./keyboard.js";
 
@@ -71,7 +71,7 @@ async function render_review(stage) {
   }
 }
 
-async function render_lookup() {
+async function render_library() {
   const table_body = document.querySelector("#card-table tbody");
   table_body.innerHTML = ""; // clear previous rows
 
@@ -98,10 +98,6 @@ async function render_lookup() {
   });
 }
 
-async function render_lookalike() {
-  display_message("Working on it!", "neutral");
-}
-
 async function render_settings() {
   const port_input = document.querySelector("#port-input");
   const no_cards_input = document.querySelector("#no-cards-input");
@@ -123,12 +119,9 @@ async function render_app(scene_id, stage = null) {
     case "review":
       render_review(stage);
       break;
-    case "lookup":
-      await render_lookup();
-      lookup_post_process(); // wait for rendering to be done before running post_process
-      break;
-    case "lookalike":
-      render_lookalike();
+    case "library":
+      await render_library();
+      library_post_process(); // wait for rendering to be done before running post_process
       break;
     case "settings":
       await render_settings();

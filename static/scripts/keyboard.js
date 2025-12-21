@@ -7,14 +7,10 @@ const global_keymap = [
   },
   {
     key: "2",
-    callback: () => window.render_app("lookup"),
+    callback: () => window.render_app("library"),
   },
   {
     key: "3",
-    callback: () => window.render_app("lookalike"),
-  },
-  {
-    key: "4",
     callback: () => window.render_app("settings"),
   },
 ];

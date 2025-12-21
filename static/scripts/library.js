@@ -97,14 +97,14 @@ export async function toggle_save_mode(button) {
 const add_card_button = document.querySelector("button.add-card");
 add_card_button.addEventListener("click", async () => {
   await add_card();
-  await window.render_app("lookup"); // gotta re-render to show changes happening in the db
+  await window.render_app("library"); // gotta re-render to show changes happening in the db
 });
 
 const delete_records_button = document.querySelector("button.delete-card");
 delete_records_button.addEventListener("click", async () => {
   // have to be async since we're chaining two async functions
   await delete_card();
-  await window.render_app("lookup");
+  await window.render_app("library");
 });
 
 document.addEventListener("click", async (e) => {
@@ -116,7 +116,7 @@ document.addEventListener("click", async (e) => {
   // returns 0 if something was updated in DB, returns 1 if entered save-mode, otherwise errors
   if (code === 0) {
     window.display_message("Updated!", "positive");
-    await window.render_app("lookup"); // have to re-render to show updated change in the database.
+    await window.render_app("library"); // have to re-render to show updated change in the database.
   }
 });
 
@@ -141,7 +141,7 @@ function handlePossibleShiftSelection(e) {
   lastCheckedIndex = currentIndex;
 }
 
-export function lookup_post_process() {
+export function library_post_process() {
   const boxes = document.querySelectorAll(".select-checkbox");
   boxes.forEach((box) => {
     box.addEventListener("click", handlePossibleShiftSelection);
