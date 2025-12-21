@@ -21,7 +21,8 @@ section#lookup {
   margin: 0;
 }
 
-th, td {
+th,
+td {
   border: 1px solid #555;
   padding: 0.5rem;
 }
@@ -70,7 +71,7 @@ input.select-checkbox:checked {
 }
 
 input.select-checkbox:checked::after {
-  content: '✔';
+  content: "✔";
   color: white;
   font-size: 1.05rem;
   position: absolute;
@@ -102,11 +103,11 @@ input.select-checkbox:checked::after {
 }
 
 .card-input-box {
-    width: 20%;
-    height: 2rem;
-    padding-bottom: 0.35rem;
-    padding-top: 0.25rem;
-    font-size: 1.1rem;
-    margin-left: 0.75rem;
-    text-align: center;
+  width: 20%;
+  height: 2rem;
+  padding-bottom: 0.35rem;
+  padding-top: 0.25rem;
+  font-size: 1.1rem;
+  margin-left: 0.75rem;
+  text-align: center;
 }

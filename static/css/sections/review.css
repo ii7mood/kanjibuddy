@@ -62,7 +62,9 @@ section#pre-review {
   color: #f5f5f5;
   font-size: 1.1rem;
   outline: none;
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
 .review-input-box:focus {
@@ -86,9 +88,10 @@ div.counters {
   align-items: center;
 }
 
-.point-counter, .card-counter {
+.point-counter,
+.card-counter {
   color: #4f4f4f;
-  font-size: 1.30rem;
+  font-size: 1.3rem;
   margin: 0.75rem;
   font-weight: bold;
   text-shadow: border;

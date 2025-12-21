@@ -4,7 +4,8 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "format": "prettier --write ."
   },
   "keywords": [],
   "author": "",
@@ -17,5 +18,8 @@
   },
   "optionalDependencies": {
     "xlsx": "^0.18.5"
+  },
+  "devDependencies": {
+    "prettier": "^3.7.4"
   }
 }

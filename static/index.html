@@ -1,23 +1,37 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
+    <meta charset="utf-8" />
     <title>Kanji Buddy</title>
-    <link rel="stylesheet" href="css/base.css">
-    <link rel="stylesheet" href="css/layout.css">
-    <link rel="stylesheet" href="css/components.css">
-    <link rel="stylesheet" href="css/sections/review.css">
-    <link rel="stylesheet" href="css/sections/lookup.css">
-    <link rel="stylesheet" href="css/sections/settings.css">
-    <link rel="stylesheet" href="css/theme.css">
-    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/layout.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/sections/review.css" />
+    <link rel="stylesheet" href="css/sections/lookup.css" />
+    <link rel="stylesheet" href="css/sections/settings.css" />
+    <link rel="stylesheet" href="css/theme.css" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
   </head>
   <body>
     <div class="sidebar">
-      <button class="sidebar-tab active" id="review-tab" style="border-top-right-radius: 6px;" title="Review">📝</button>
+      <button
+        class="sidebar-tab active"
+        id="review-tab"
+        style="border-top-right-radius: 6px"
+        title="Review"
+      >
+        📝
+      </button>
       <button class="sidebar-tab" id="lookup-tab" title="Lookup">🔎</button>
       <button class="sidebar-tab" id="lookalike-tab" title="Lookalike Kanji">🧐</button>
-      <button class="sidebar-tab" id="settings-tab" style="border-bottom-right-radius: 6px;" title="Settings">⚙️</button>
+      <button
+        class="sidebar-tab"
+        id="settings-tab"
+        style="border-bottom-right-radius: 6px"
+        title="Settings"
+      >
+        ⚙️
+      </button>
     </div>
 
     <div class="content">
@@ -26,20 +40,24 @@
       <section id="review">
         <section id="pre-review" class="sub-scene">
           <h1 class="greeting-text">Ready to Study?</h1>
-          <p class="sub-greeting">Configure your session and begin reviewing your cards.</p>
+          <p class="sub-greeting">
+            Configure your session and begin reviewing your cards.
+          </p>
           <div class="review-options">
             <label>Seed:</label>
-            <input class="seed review-input-box" type="number" placeholder=" Optional">
-            <label><input type="checkbox" id="shuffle-checkbox"> Shuffle</label>
+            <input class="seed review-input-box" type="number" placeholder=" Optional" />
+            <label><input type="checkbox" id="shuffle-checkbox" /> Shuffle</label>
           </div>
           <button class="generic-btn positive start-button">Start Reviewing!</button>
-          <button class="generic-btn continue-button">Continue from previous session </button>
+          <button class="generic-btn continue-button">
+            Continue from previous session
+          </button>
         </section>
 
         <section id="reviewing" class="sub-scene hidden">
           <div class="card-view">
             <div class="counters">
-              <p class="point-counter">Score: 9/10</p> 
+              <p class="point-counter">Score: 9/10</p>
               <p class="card-counter">Card: 10/10</p>
             </div>
             <h1 class="kanji">食べる</h1>
@@ -51,12 +69,21 @@
           </div>
 
           <div class="input-prompt">
-            <input id="input-prompt-box" class="generic-input-box center-text" type="text" placeholder="たべる">
+            <input
+              id="input-prompt-box"
+              class="generic-input-box center-text"
+              type="text"
+              placeholder="たべる"
+            />
           </div>
 
           <div class="button-prompts">
-            <button id="marker-correct" class="generic-btn positive">Mark as correct!</button>  
-            <button id="marker-incorrect" class="generic-btn negative">Mark as incorrect.</button>
+            <button id="marker-correct" class="generic-btn positive">
+              Mark as correct!
+            </button>
+            <button id="marker-incorrect" class="generic-btn negative">
+              Mark as incorrect.
+            </button>
           </div>
           <button id="show-answer" class="generic-btn">Show Answer</button>
         </section>
@@ -72,20 +99,22 @@
       <section id="lookup" class="hidden">
         <div class="lookup">
           <h1 class="header">Database</h1>
-          <hr>
+          <hr />
           <div class="add-card">
             <button class="generic-btn positive add-card">Add Card</button>
-            <input class="generic-input-box card-input-box" placeholder="食べる">
-            <input class="generic-input-box card-input-box" placeholder="to eat">
-            <input class="generic-input-box card-input-box" placeholder="ショク、 ジキ">
-            <input class="generic-input-box card-input-box" placeholder="たべる">
+            <input class="generic-input-box card-input-box" placeholder="食べる" />
+            <input class="generic-input-box card-input-box" placeholder="to eat" />
+            <input class="generic-input-box card-input-box" placeholder="ショク、 ジキ" />
+            <input class="generic-input-box card-input-box" placeholder="たべる" />
           </div>
           <div class="table-container">
             <table id="card-table">
               <thead>
                 <tr>
                   <th class="center-text">
-                    <button class="generic-btn negative delete-card">Delete Selected</button>
+                    <button class="generic-btn negative delete-card">
+                      Delete Selected
+                    </button>
                   </th>
                   <th class="center-text">ID</th>
                   <th class="center-text">Kanji</th>
@@ -107,26 +136,26 @@
 
       <section id="settings" class="hidden">
         <h1 class="header">Settings</h1>
-        <hr>
+        <hr />
 
         <div class="settings-group">
           <div class="option">
             <label>No. cards per session</label>
-            <input id="no-cards-input" type="number" placeholder="10" value="10">
+            <input id="no-cards-input" type="number" placeholder="10" value="10" />
           </div>
           <div class="option">
             <label class="option-label">
               <span>Default shuffle</span>
-              <input type="checkbox" id="shuffle-setting">
+              <input type="checkbox" id="shuffle-setting" />
             </label>
           </div>
           <div class="option">
             <label>Dark theme (always on, cope)</label>
-            <input type="checkbox" checked disabled>
+            <input type="checkbox" checked disabled />
           </div>
           <div class="option">
             <label>Port: </label>
-            <input id="port-input" type="number" placeholder="3000" value="3000">
+            <input id="port-input" type="number" placeholder="3000" value="3000" />
           </div>
         </div>
 

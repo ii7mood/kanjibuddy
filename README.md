@@ -23,7 +23,7 @@ You can add, edit, or review cards directly from the browser — no accounts, no
 
 ## ⚙️ Requirements
 
-- **Tested on Node.js v25.2.0**  
+- **Tested on Node.js v25.2.0**
 - **npm** or **pnpm**
 - Any modern browser
 
@@ -50,11 +50,11 @@ All data (review sessions, settings, and database) stays local on your machine.
 
 ## 🧠 Features
 
-- Review mode with score tracking  
-- Kanji database (add/edit/delete)  
-- Local session persistence  
-- Configurable card count and shuffle  
-- Keyboard shortcuts (1–4 for tab switch, Enter to start review, Up/Down to mark right/wrong, C to continue past session)  
+- Review mode with score tracking
+- Kanji database (add/edit/delete)
+- Local session persistence
+- Configurable card count and shuffle
+- Keyboard shortcuts (1–4 for tab switch, Enter to start review, Up/Down to mark right/wrong, C to continue past session)
 - Local config file (`config.json`)
 
 ---
@@ -62,8 +62,9 @@ All data (review sessions, settings, and database) stays local on your machine.
 ## 🧪 Notes
 
 The project uses:
-- **Express** for serving static content  
-- **Kysely** + **better-sqlite3** for the local database  
+
+- **Express** for serving static content
+- **Kysely** + **better-sqlite3** for the local database
 - **Vanilla JavaScript** for the frontend, modularized by scene (`review.js`, `lookup.js`, etc.)
 
 ---
@@ -71,7 +72,7 @@ The project uses:
 ## 💬 Community
 
 This project is primarily for **personal use**, but if you find it useful or have an idea,  
-feel free to open an issue or feature request — I'll *probably* add it.
+feel free to open an issue or feature request — I'll _probably_ add it.
 
 ---
 

@@ -1,4 +1,5 @@
-html, body {
+html,
+body {
   margin: 0;
   height: 100%;
   width: 100%;
@@ -9,23 +10,31 @@ html, body {
   line-height: 1.5;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   color: #ffffffcc;
   font-weight: 600;
   letter-spacing: 0.05em;
   margin-top: 0;
 }
 
-p, label, input, button {
+p,
+label,
+input,
+button {
   color: #aaaaaa;
   font-size: 1rem;
 }
 
-button, input {
+button,
+input {
   font-family: inherit;
   letter-spacing: 0.04em;
 }
-
 
 body {
   display: flex;
