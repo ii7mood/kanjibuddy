@@ -17,7 +17,11 @@ const global_keymap = [
 
 export function loadKeymap(shortcuts) {
   if (activeHandler) document.removeEventListener("keydown", activeHandler);
-  shortcuts = [...global_keymap, ...shortcuts];
+  if (shortcuts != null) {
+    shortcuts = [...global_keymap, ...shortcuts];
+  } else {
+    shortcuts = [...global_keymap]
+  }
 
   activeHandler = (e) => {
     const element = document.activeElement;
