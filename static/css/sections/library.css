@@ -103,11 +103,14 @@ input.select-checkbox:checked::after {
 }
 
 .card-input-box {
-  width: 20%;
-  height: 2rem;
   padding-bottom: 0.35rem;
   padding-top: 0.25rem;
-  font-size: 1.1rem;
-  margin-left: 0.75rem;
-  text-align: center;
+  height: 1.5rem;
+  width: 7.25rem;
+  font-size: 0.8rem;
+}
+
+.search-input-box {
+  margin-bottom: 0.35rem;
+  width: 45%;
 }
