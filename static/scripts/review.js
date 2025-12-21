@@ -144,5 +144,5 @@ export function getKeymap(stage) {
       ];
   }
   window.display_message("Invalid stage keymap selection", "negative");
-  return [{ key: "", callback: console.log }]; // temp solution; guard loadKeymap() later
+  return [];
 }

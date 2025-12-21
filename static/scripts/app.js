@@ -28,8 +28,6 @@ async function render_review(stage) {
   ) {
     document.querySelector(`section#${state.review.stage}`).classList.add("hidden");
     document.querySelector(`section#${stage}`).classList.remove("hidden");
-    state.review.stage = stage;
-    loadKeymap(getStageKeymap(stage));
   }
 
   switch (state.review.stage) {
@@ -119,15 +117,18 @@ async function render_app(scene_id, stage = null) {
     case "review":
       document.querySelector("#review-tab").classList.add("active");
       render_review(stage);
+      loadKeymap(getStageKeymap(state.review.stage));
       break;
     case "library":
       document.querySelector("#library-tab").classList.add("active");
       await render_library();
       library_post_process(); // wait for rendering to be done before running post_process
+      loadKeymap([]); // no defined keymap for this section
       break;
     case "settings":
       document.querySelector("#settings-tab").classList.add("active");
       await render_settings();
+      loadKeymap([]);
       break;
   }
 }
