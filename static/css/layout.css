@@ -21,7 +21,6 @@
   color: #ccc;
   font-size: 1.1rem;
   cursor: pointer;
-  transition: all 0.2s ease;
   margin: 0;
 }
 
@@ -29,7 +28,6 @@
   background-color: #3a3a3a;
   border-color: #888;
   color: white;
-  transform: translateX(2px);
 }
 
 .sidebar-tab.active {

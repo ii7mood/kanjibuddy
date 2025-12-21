@@ -108,22 +108,25 @@ async function render_settings() {
 
 async function render_app(scene_id, stage = null) {
   if (scene_id != null) {
-    // change scene rather than re-render current scene
+    // change scene rather than re-render current scene i.e scene_id is not null
     document.querySelector(`section#${state.scene}`).classList.add("hidden");
     document.querySelector(`section#${scene_id}`).classList.remove("hidden");
+    document.querySelector(`#${state.scene}-tab`).classList.remove("active");
     state.scene = scene_id;
   }
-
-  // now to actually render request scene
+  
   switch (state.scene) {
     case "review":
+      document.querySelector("#review-tab").classList.add("active");
       render_review(stage);
       break;
     case "library":
+      document.querySelector("#library-tab").classList.add("active");
       await render_library();
       library_post_process(); // wait for rendering to be done before running post_process
       break;
     case "settings":
+      document.querySelector("#settings-tab").classList.add("active");
       await render_settings();
       break;
   }
@@ -131,19 +134,8 @@ async function render_app(scene_id, stage = null) {
 
 const tabs = document.querySelectorAll(".sidebar-tab");
 tabs.forEach((tab) => {
-  tab.addEventListener("click", async () => {
-    const prev_scene = document.querySelector(".content > section:not(.hidden)");
-    // content > section.not... means give me any section elements directly within content (top-level only)
-    prev_scene.classList.add("hidden");
-    document.querySelector(`#${prev_scene.id}-tab`).classList.remove("active");
-
-    document
-      .querySelector(`section#${tab.id.replace("-tab", "")}`)
-      .classList.remove("hidden");
-    tab.classList.add("active");
-    await render_app(tab.id.replace("-tab", "")); // switching between tabs should never invoke a change in stage
-  });
-});
+  tab.addEventListener("click", async () => await render_app(tab.id.replace("-tab", "")));
+}); // switching between tabs should never invoke a change in stage
 
 let state = {
   review: loadReviews(),
